@@ -6,11 +6,5 @@
 
 class Solution(object):
     def climbStairs(self, n):
-        if n <= 2:
-            return n
-        a, b = 1, 2
-        for i in range(3, n + 1):
-            tmp = a
-            a = b
-            b += tmp
-        return b
+        sqrt5 = pow(5, 0.5)
+        return int(pow((1 + sqrt5) / 2, n + 1) / sqrt5 + 0.5)
