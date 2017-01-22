@@ -4,11 +4,9 @@
 
 class Solution(object):
     def maxProfit(self, prices):
-        if len(prices) == 0:
-            return 0
         res = 0
-        min_price = prices[0]
-        for i in range(1, len(prices)):
-            res = max(res, prices[i] - min_price)
-            min_price = min(min_price, prices[i])
+        min_price = float('inf')
+        for p in prices:
+            min_price = min(min_price, p)
+            res = max(res, p - min_price)
         return res
